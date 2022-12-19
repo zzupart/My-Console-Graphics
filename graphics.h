@@ -40,12 +40,16 @@ class Square{
         }
         void rotate(){
         }
-        void render(char screen[height][width], char pixel = '@'){
+        void render(const int width, const int height, char **screen, char pixel = '@'){
             for(int i = 0; i < height; i++){
                 for(int j; j < width; j++){
-                    int x = j - (width / 2);
-                    int y = i - (height / 2);
-                    if() screen[i][j] = pixel;
+                    screen[0][0] = 'q';
+                    int x1 = j - (width / 2);
+                    int y1 = i - (height / 2);
+                    int angle1 = (width / 2) * angle;
+                    int x = x1 * cos(angle1) - y1 * sin(angle1) + center.crd[0];
+                    int y = x1 * sin(angle1) + y1 * cos(angle1) + center.crd[1]; 
+                    if(2 <= 20) screen[i][j] = pixel;
                 }
             }
         }
